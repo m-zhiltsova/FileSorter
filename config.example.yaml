@@ -1,0 +1,16 @@
+version: 1
+scan_paths:
+  - /home/user/projects
+  - /home/user/downloads
+sort_rules:
+  - extension: ".jpg"
+    destination: "Images"
+  - extension: ".log"
+    destination: "Logs"
+cleanup_rules:
+  - path: "/home/user/projects"
+    older_than_days: 30
+    action: "archive"
+  - older_than_days: 7
+    action: "trash"
+archive_path: "/home/user/file-sorter-archive"
